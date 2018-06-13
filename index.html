@@ -8,6 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="open-iconic-master/font/css/open-iconic-bootstrap.css">
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
 
   <title>Hello, world!</title>
   <style>
@@ -16,8 +17,11 @@
   }
 </style>
 </head>
+
 <body>
-  <div style="font-size: 40px;font-weight: 600">
+	<h1 style="display: none" id="mioh1">SOno h1</h1>
+	<span id="miospan">aweeeeeeeeeeeeeee</span>
+  <div id="draggable" style="font-size: 40px;font-weight: 600;width: 300px">
     <span class="oi oi-person" title="person" aria-hidden="true"></span>
     <span class="oi oi-action-redo"></span>
     <div class="d-none d-xl-block">XL</div>
@@ -74,12 +78,41 @@
   		<div class="col"></div>
   	</div>
   </div>
+  <input type="text" id="target">
 
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="jquery-ui/jquery-ui.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	$("#mioh1").show("slow");
+
+	$("span.oi-person").click(
+
+		function(){
+			console.log("ciaooo");
+			$("#miospan").css("font-size","50px").css("color","green");
+		}
+
+	);
+
+	$( "#target" ).keypress(function( event ) {
+		alert("ciao");
+	});
+
+  
+});
+</script>
+<script>
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
 </body>
 </html>
